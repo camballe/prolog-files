@@ -209,3 +209,17 @@ loop(X) :-
       ). %In Prolog, the arrow -> is a control construct called the "if-then-else" or "conditional" operator. It is used for conditional execution based on a condition.
 
 
+% Lists
+write_list([]).
+
+write_list([Head|Tail]) :-
+    write(Head), nl,
+    write_list(Tail).
+
+% Strings
+join_str(Str1, Str2, Str3) :-
+    name(Str1, StrList1),
+    name(Str2, StrList2),
+    append(StrList1, StrList2, StrList3),
+    name(Str3, StrList3).
+    
