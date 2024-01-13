@@ -136,3 +136,12 @@ related(X, Y) :-
 related(X, Y) :- % The rule "related" between X and Y is true if:
     parent(X, Z),  % X is the parent of Z
     related(Z, Y). % Z is related to Y (recursive call to the "related" rule)
+
+% Arithmetic
+double_digit(X, Y) :- 
+    Y is X*2.
+
+is_even(X) :-
+    Y is X//2, X =:= 2*Y.
+
+% Input and Output
