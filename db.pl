@@ -193,3 +193,19 @@ count_up(Low, High) :-
     between(Low, High, Y),
     Z is Low + Y,
     write(Z), nl.
+
+
+guess_num :- loop(start). % It initiates the guessing game by calling loop/1 with the initial value start.
+
+% loop(15) :- write('You guessed it').
+loop(X) :- 
+    % X \= 15,
+    write('Guess Number '),
+    read(Guess),
+   (Guess = 15 ->
+        write('You guessed it');
+        write(Guess), write(' is not the number'), nl,
+        loop(Guess)
+      ). %In Prolog, the arrow -> is a control construct called the "if-then-else" or "conditional" operator. It is used for conditional execution based on a condition.
+
+
