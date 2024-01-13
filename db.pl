@@ -96,3 +96,43 @@ what_grade(Other) :-
     Grade is Other - 5,
     format('Go to grade ~w', [Grade]).
 
+has(albert, olive).
+
+owns(albert, pet(cat, olive)).
+
+
+customer(tom, smith, 20.55).
+customer(sally, smith, 120.55).
+
+get_cust_bal(FName, LName) :-
+    customer(FName, LName, Bal),
+    write(FName), tab(1),
+    format('~w owes us $~2f ~n', [LName, Bal]).
+
+
+vertical(line(point(X, Y), point(X, Y2))).
+horizontal(line(point(X, Y), point(X2, Y))).
+
+warm_blooded(penguin).
+warm_blooded(human).
+
+produce_milk(penguin).
+produce_milk(human).
+
+have_feathers(penguin).
+have_hair(human).
+
+mammal(X) :-
+    warm_blooded(X),
+    produce_milk(X),
+    have_hair(X).
+
+
+related(X, Y) :- 
+    parent(X, Y).
+
+
+% Recursion
+related(X, Y) :- % The rule "related" between X and Y is true if:
+    parent(X, Z),  % X is the parent of Z
+    related(Z, Y). % Z is related to Y (recursive call to the "related" rule)
