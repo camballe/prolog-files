@@ -1,3 +1,7 @@
+% KAMBALE ENOCH NYAMBU - P15/1921/2022
+% QUESTION 2d) Write a procedure to return the maximum value from a list eg [1,-2,3] =&gt; 3
+
+
 % Base case: Maximum of a single element list is the element itself.
 max_in_list([X], X).
 

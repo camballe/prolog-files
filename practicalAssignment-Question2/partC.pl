@@ -1,3 +1,6 @@
+% KAMBALE ENOCH NYAMBU - P15/1921/2022
+% QUESTION 2c) Write a procedure to remove a given item from a list.
+
 remove_item(_, [], []). % Base case: removing an item from an empty list results in an empty list.
 remove_item(Item, [Item|Rest], Result) :-
     remove_item(Item, Rest, Result). % Skip the item when found and continue removing in the rest of the list.
